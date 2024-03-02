@@ -12,16 +12,24 @@
 <header>
     <div class="logo">Сайт</div>
     <nav>
-        <a href="{{ route('home') }}">Главная</a>
-        <a href="{{ route('news') }}">Новости</a>
-        <a href="{{ route('contacts') }}">Контакты</a>
+        <ul>
+            <li><a class="link {{request()->segment(1) == '' ? 'active' : '' }}" href="{{ route('home') }}">Главная</a></li>
+            <li><a class="link {{request()->segment(1) == 'news' ? 'active' : '' }}" href="{{ route('news') }}">Новости</a></li>
+            <li><a class="link {{request()->segment(1) == 'contacts' ? 'active' : '' }}" href="{{ route('contacts') }}">Контакты</a></li>
+            <li><a class="link {{request()->segment(1) == 'about' ? 'active' : '' }}" href="{{ route('about') }}">О нас</a></li>
+        </ul>
     </nav>
 </header>
 
-@yield('content')
+<main>
+    <h1>{{ $title }}</h1>
+    <div class="content">
+        @yield('content')
+    </div>
+</main>
 
 <footer>
-
+    <p>&copy; 2024 Простой сайт. Все права защищены.</p>
 </footer>
 </body>
 </html>
