@@ -1,18 +1,20 @@
 @extends('layouts.base')
 @section('content')
+    @if($message)
     <div class="single-post">
-        @if($files)
+        @if($message['files'])
             <div class="images">
-                @foreach($files as $file)
+                @foreach($message['files'] as $file)
                     @if($file['type'] == 'image')
                         <div class="img">
-                            <img src="{{ $file['src'] }}" alt="">
+                            <img src="{{ $file['src'] ?? 'https://placehold.co/400' }}" alt="">
                         </div>
                     @endif
                 @endforeach
             </div>
         @endif
-            <div>{!! $text !!}</div>
+        <div>{!! $message['text'] !!}</div>
     </div>
+    @endif
 
 @endsection
