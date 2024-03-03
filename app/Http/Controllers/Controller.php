@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Services\PlaceApi;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Pagination\Paginator;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
@@ -34,7 +33,7 @@ class Controller extends BaseController
         $page = $request->get('page') ?? 1;
         $response = $api->getMessages([
             'limit' => $limit,
-            'offset' => $limit * ($page - 1),
+            'page' => $page,
         ]);
 
         $paginator = new LengthAwarePaginator(
