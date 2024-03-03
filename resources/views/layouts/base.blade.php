@@ -10,7 +10,7 @@
 </head>
 <body>
 <header>
-    <div class="logo">Сайт</div>
+    <a href="{{ route('home') }}" class="logo">Сайт</a>
     <nav>
         <ul>
             <li><a class="link {{request()->segment(1) == '' ? 'active' : '' }}" href="{{ route('home') }}">Главная</a></li>
@@ -29,7 +29,7 @@
 </main>
 
 <footer>
-    <p>&copy; 2024 Простой сайт. Все права защищены.</p>
+    <p>&copy; @php echo date('Y') @endphp Простой сайт. Все права защищены.</p>
 </footer>
 </body>
 </html>

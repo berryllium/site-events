@@ -2,39 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\PlaceApi;
+use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 
 class Controller extends BaseController
 {
-    public function home()
+    public function home(PlaceApi $api)
     {
-        $place = 1;
-        $response = Http::get("http://127.0.0.1:8000/api/place/$place/messages", [
-            'limit' => 8,
-        ]);
-        $response = $response->json();
-        $posts = [];
-        if(isset($response['messages'])) {
-            foreach ($response['messages'] as $message) {
-                $src = 'https://placehold.co/150';
-                foreach ($message['message_files'] as $file) {
-                    if(preg_match('#\.(jpg|png|webp|gif|svg)$#',$file['src'])) {
-                        $src = $file['src'];
-                        break;
-                    }
-                }
-                $posts[] = [
-                    'id' => $message['id'],
-                    'text' => $message['text'],
-                    'src' => $src
-                ];
-            }
-        }
-
+        $response = $api->getMessages(['limit' => 8]);
         return view('home', [
             'title' => 'Главная',
-            'posts' => $posts
+            'posts' => $response ? $response['messages'] : [],
         ]);
     }
 
@@ -45,17 +28,26 @@ class Controller extends BaseController
         ]);
     }
 
-    public function news()
+    public function news(PlaceApi $api, Request $request)
     {
-        for($i = 0; $i < 8; $i++) {
-            $posts[] = [
-                'title' => fake('ru')->title,
-                'text' => fake('ru')->text(150)
-            ];
-        }
+        $limit = $request->get('limit') ?? 2;
+        $page = $request->get('page') ?? 1;
+        $response = $api->getMessages([
+            'limit' => $limit,
+            'offset' => $limit * ($page - 1),
+        ]);
+
+        $paginator = new LengthAwarePaginator(
+            new Collection($response['messages']),
+            $response['pagination']['total'],
+            $limit,
+            $page,
+        );
+        $paginator->setPath('/news');
+
         return view('news', [
             'title' => 'Новости',
-            'posts' => $posts,
+            'paginator' => $paginator,
         ]);
     }
 
@@ -72,36 +64,13 @@ class Controller extends BaseController
         return back();
     }
 
-    public function detail($id)
+    public function detail($id, PlaceApi $api)
     {
-        $post = [];
-        $place = 1;
-        $response = Http::get("http://localhost:8000/api/place/$place/messages/$id");
-        $response = $response->json();
-        if(isset($response['message'])) {
-            $files = [];
-            foreach ($response['message']['message_files'] as $file) {
-                if(preg_match('#\.(jpg|png|webp|gif|svg)$#',$file['src'])) {
-                    $files[] = [
-                        'type' => 'image',
-                        'src' => $file['src']
-                    ];
-                    break;
-                }
-            }
-            $post = [
-                'text' => $response['message']['text'],
-                'files' => $files
-            ];
-        }
-
-        if(!$post) abort(404);
-
-
+        $message = $api->getMessageById($id);
+        if(!$message) abort(404);
         return view('detail', [
             'title' => 'Детальная страница',
-            'text' => $response['message']['text'],
-            'files' => $files,
+            'message' => $message,
         ]);
     }
 }
