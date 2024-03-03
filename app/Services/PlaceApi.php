@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
@@ -10,13 +11,13 @@ class PlaceApi
     private $headers;
     private $url;
 
-    public function __construct()
+    public function __construct(Request $request)
     {
         $this->headers = [
             'Authorization' => 'Bearer ' . env('PLACE_API_TOKEN'),
             'Accept' => 'application/json'
         ];
-        $this->url = env('PLACE_API_URL') . '/api/place/' . env('PLACE_ID') . '/';
+        $this->url = env('PLACE_API_URL') . '/api/place/' . $request->host() . '/';
     }
 
     public function getPlaceInfo()

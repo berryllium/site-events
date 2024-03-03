@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Http;
 
 class Controller extends BaseController
 {
@@ -20,10 +19,12 @@ class Controller extends BaseController
         ]);
     }
 
-    public function contacts()
+    public function contacts(PlaceApi $api)
     {
+        $response = $api->getPlaceInfo();
         return view('contacts', [
-            'title' => 'Контакты'
+            'title' => 'Контакты',
+            'place' => $response
         ]);
     }
 
@@ -36,6 +37,7 @@ class Controller extends BaseController
             'page' => $page,
         ]);
 
+        if(!$response) abort(404);
         $paginator = new LengthAwarePaginator(
             new Collection($response['messages']),
             $response['pagination']['total'],
@@ -50,17 +52,12 @@ class Controller extends BaseController
         ]);
     }
 
-    public function about()
+    public function about(PlaceApi $api)
     {
-        $response = Http::get('http://localhost:8000/api/place/info/1');
-        $response = $response->json();
-        if(isset($response['place'])) {
-            return view('about', [
-                'title' => 'Новости',
-                'place' => $response['place'],
-            ]);
-        }
-        return back();
+        return view('about', [
+            'title' => 'О нас',
+            'place' => $api->getPlaceInfo(),
+        ]);
     }
 
     public function detail($id, PlaceApi $api)
