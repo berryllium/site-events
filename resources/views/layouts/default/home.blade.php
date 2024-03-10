@@ -1,11 +1,15 @@
 @extends('base')
 @section('content')
-    <div class="posts">
-        @foreach($posts as $post)
-            <a href="{{ route('detail', $post['id']) }}" class="post">
-                <img class="img" src="{{ $post['main_picture'] ?? 'https://placehold.co/400' }}" alt="">
-                <div class="text">{{ Str::of($post['text'])->limit(100) }}</div>
-            </a>
+    @if($files)
+    <div class="mb-5">
+        <x-slider :files="$files"></x-slider>
+    </div>
+    @endif
+    <div class="row">
+        @foreach($posts as $data)
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                <x-news-card :data="$data" type="full"></x-news-card>
+            </div>
         @endforeach
     </div>
 @endsection

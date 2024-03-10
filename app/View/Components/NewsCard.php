@@ -13,7 +13,8 @@ class NewsCard extends Component
      * Create a new component instance.
      */
     public function __construct(
-        protected array $data
+        protected array $data,
+        protected string $type,
     ){}
 
     /**

@@ -12,3 +12,8 @@
     overflow: hidden;
   }
 }
+
+.carousel-item {
+  height: 500px;
+  object-fit: cover;
+}

@@ -13,9 +13,16 @@ class Controller extends BaseController
     public function home(PlaceApi $api)
     {
         $response = $api->getMessages(['limit' => 8]);
+        $place = $api->getPlaceInfo();
+        $files = isset($place['place_files']) && $place['place_files'] ?
+            array_column($place['place_files'], 'src') : [];
+
+
         return view('home', [
             'title' => 'Главная',
             'posts' => $response ? $response['messages'] : [],
+            'place' => $place,
+            'files' => $files
         ]);
     }
 
