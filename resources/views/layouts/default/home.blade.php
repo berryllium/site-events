@@ -8,7 +8,7 @@
     <div class="row">
         @foreach($posts as $data)
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-                <x-news-card :data="$data" type="full"></x-news-card>
+                <x-news-card :data="$data"></x-news-card>
             </div>
         @endforeach
     </div>
