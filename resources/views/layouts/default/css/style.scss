@@ -4,4 +4,11 @@
     object-fit: cover;
     object-position: top center;
   }
+  &-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    height: 100px;
+    overflow: hidden;
+  }
 }
