@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('base')
 @section('content')
     <div class="row">
         @if($place)

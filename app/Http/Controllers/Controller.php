@@ -30,7 +30,7 @@ class Controller extends BaseController
 
     public function news(PlaceApi $api, Request $request)
     {
-        $limit = $request->get('limit') ?? 2;
+        $limit = $request->get('limit') ?? 8;
         $page = $request->get('page') ?? 1;
         $response = $api->getMessages([
             'limit' => $limit,

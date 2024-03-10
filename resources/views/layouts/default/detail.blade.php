@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('base')
 @section('content')
     @if($message)
     <div class="single-post">
