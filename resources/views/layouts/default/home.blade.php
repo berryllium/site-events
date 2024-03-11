@@ -1,8 +1,8 @@
 @extends('base')
 @section('content')
-    @if($files)
+    @if($horizontal_slider)
     <div class="mb-5">
-        <x-slider :files="$files"></x-slider>
+        <x-slider :files="$horizontal_slider"></x-slider>
     </div>
     @endif
     <div class="row">

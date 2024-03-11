@@ -5,10 +5,12 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-        @foreach($images as $k => $src)
-            <div class="carousel-item {{ $k ? '' : 'active' }}">
-                <img src="{{ $src }}" class="d-block w-100" alt="...">
-            </div>
+        @foreach($files as $k => $file)
+            @if($file['src'])
+                <a href="{{ $file['link'] }}" class="carousel-item {{ $k ? '' : 'active' }}">
+                    <img src="{{ $file['src'] }}" class="d-block w-100" alt="{{ $file['name'] }}">
+                </a>
+            @endif
         @endforeach
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

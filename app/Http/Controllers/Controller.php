@@ -14,15 +14,22 @@ class Controller extends BaseController
     {
         $response = $api->getMessages(['limit' => 8]);
         $place = $api->getPlaceInfo();
-        $files = isset($place['place_files']) && $place['place_files'] ?
-            array_column($place['place_files'], 'src') : [];
-
+        $sliders = $place['sliders'] ?? [];
+        $vertical = [];
+        $horizontal = [];
+        foreach ($sliders as $slider) {
+            foreach ($slider['slides'] as $slide) {
+                $type = $slider['type'];
+                $$type[] = $slide;
+            }
+        }
 
         return view('home', [
             'title' => 'Главная',
             'posts' => $response ? $response['messages'] : [],
             'place' => $place,
-            'files' => $files
+            'vertical_slider' => $vertical,
+            'horizontal_slider' => $horizontal,
         ]);
     }
 
