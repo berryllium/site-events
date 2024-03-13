@@ -21,7 +21,8 @@ class Slider extends Component
     public function render(): View|Closure|string
     {
         return view('components.slider', [
-            'files' => $this->files
+            'files' => $this->files,
+            'id' => 'slider-' . uniqid(),
         ]);
     }
 }
