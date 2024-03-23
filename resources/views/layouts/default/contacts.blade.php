@@ -1,13 +1,13 @@
 @extends('base')
 @section('content')
-    <div class="contact-info row">
+    <div class="contact-info row mb-4">
         @if($placeInfo)
-            <div class="col-6">
+            <div class="col-12 col-lg-6">
                 @if($placeInfo['address_link'])
                     <div id="map" data-link="{{ $placeInfo['address_link'] }}" data-name="{{ $placeInfo['name'] }}" class="mb-5"></div>
                 @endif
             </div>
-            <div class="col-6">
+            <div class="col-12 col-lg-6">
                 <div class="contact-item mb-2">
                     <i class="fas fa-map-marker-alt text-danger me-2"></i> {{ $placeInfo['address'] }}
                 </div>
