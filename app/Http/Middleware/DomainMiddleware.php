@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Services\PlaceApi;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
@@ -21,6 +22,9 @@ class DomainMiddleware
         $template = $domainTemplates[$domain] ?? 'default';
         Config::set('view.paths', [resource_path("views/layouts/$template")]);
         Config::set('app.template', $template);
+        $placeApi = new PlaceApi($request);
+        $placeInfo = $placeApi->getPlaceInfo();
+        view()->share('placeInfo', $placeInfo);
         return $next($request);
     }
 }
