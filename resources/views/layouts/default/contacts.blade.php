@@ -8,17 +8,17 @@
                 @endif
             </div>
             <div class="col-12 col-lg-6">
-                <div class="contact-item mb-2">
+                <div class="contact-item mb-3">
                     <i class="fas fa-map-marker-alt text-danger me-2"></i> {{ $placeInfo['address'] }}
                 </div>
-                <a href="tel:{{ $placeInfo['phone'] }}" class="contact-item mb-2">
+                <a href="tel:{{ $placeInfo['phone'] }}" class="contact-item mb-3">
                     <i class="fas fa-phone text-success me-2"></i> {{ $placeInfo['phone'] }}
                 </a>
-                <a href="mailto:{{ $placeInfo['email'] }}" class="contact-item mb-2">
+                <a href="mailto:{{ $placeInfo['email'] }}" class="contact-item mb-3">
                     <i class="fas fa-envelope text-dark me-2"></i> {{ $placeInfo['email'] }}
                 </a>
                 <div class="contact-item mt-3">
-                    <x-social-links :place="$placeInfo"></x-social-links>
+                    <x-social-links :place="$placeInfo" :zoom="2"></x-social-links>
                 </div>
             </div>
         @else

@@ -12,7 +12,8 @@ class SocialLinks extends Component
      * Create a new component instance.
      */
     public function __construct(
-        protected array $place
+        protected array $place,
+        protected int $zoom = 1
     ){}
 
     /**
@@ -21,7 +22,8 @@ class SocialLinks extends Component
     public function render(): View|Closure|string
     {
         return view('components.social-links', [
-            'place' => $this->place
+            'place' => $this->place,
+            'zoomClass' => 'fa-' . $this->zoom . 'x',
         ]);
     }
 }
