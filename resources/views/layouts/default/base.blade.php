@@ -53,8 +53,9 @@
             @endif
             <div class="d-none d-lg-block col-lg-3">
                 <div class="text-white mb-1">Адрес:</div>
-                <div class="contact-item mb-2">
-                    <i class="fas fa-location-dot text-danger me-2"></i> {{ $placeInfo['address'] }}
+                <div class="contact-item mb-2 d-flex">
+                    <i class="fas fa-location-dot text-danger me-2"></i>
+                    <span>{{ $placeInfo['address'] }}</span>
                 </div>
             </div>
         </div>
