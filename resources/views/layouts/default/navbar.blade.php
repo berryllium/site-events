@@ -1,4 +1,4 @@
-<div class="contacts mt-2 row">
+<div class="contacts mt-2 row d-lg-none">
     <div class="col-7">
         <div class="contact-item mb-2">
             <a href="tel:{{ $placeInfo['phone'] }}" class="text-decoration-none">
@@ -31,5 +31,13 @@
                 <a class="nav-link {{request()->segment(1) == 'contacts' ? 'active' : '' }}" href="{{ route('contacts') }}">Контакты</a>
             </li>
         </ul>
+    </div>
+    <div class="contacts mt-2 row d-lg-block ms-5">
+        <div class="contact-item mb-2">
+            <a href="tel:{{ $placeInfo['phone'] }}" class="text-decoration-none">
+                <i class="fas fa-phone text-success me-2"></i> {{ $placeInfo['phone'] }}
+            </a>
+        </div>
+        <x-social-links :place="$placeInfo"></x-social-links>
     </div>
 </nav>

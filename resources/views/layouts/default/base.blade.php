@@ -26,7 +26,7 @@
 <footer class="bg-dark text-white px-3">
     <div class="container">
         <div class="contacts mb-2 mt-2 row small">
-            <div class="col-7">
+            <div class="col-7 col-lg-3">
                 <div class="text-white mb-1">Контакты:</div>
                 <div class="contact-item mb-2">
                     <a href="tel:{{ $placeInfo['phone'] }}" class="text-decoration-none">
@@ -39,7 +39,15 @@
                     </a>
                 </div>
             </div>
-            <div class="col-5">
+            <div class="d-none d-lg-block col-lg-3">
+                <div class="text-white mb-1">Адрес:</div>
+                <div class="contact-item mb-2">
+                    <a href="tel:{{ $placeInfo['phone'] }}" class="text-decoration-none">
+                        <i class="fas fa-location-dot text-danger me-2"></i> {{ $placeInfo['address'] }}
+                    </a>
+                </div>
+            </div>
+            <div class="col-5 col-lg-3">
                 <div class="text-white mb-1">Мы в соцсетях:</div>
                 <x-social-links :place="$placeInfo"></x-social-links>
             </div>
