@@ -23,7 +23,7 @@
     </div>
 </main>
 
-<footer class="bg-dark text-white p-3">
+<footer class="bg-dark text-white px-3">
     <div class="contacts mb-2 mt-2 row small">
         <div class="col-7">
             <div class="text-white mb-1">Контакты:</div>
@@ -43,6 +43,7 @@
             <div class=""><x-social-links :place="$placeInfo" class="col-6"></x-social-links></div>
         </div>
     </div>
+    <p class="text-center small">&copy; @php echo date('Y') @endphp Все права защищены.</p>
 </footer>
 </body>
 </html>
