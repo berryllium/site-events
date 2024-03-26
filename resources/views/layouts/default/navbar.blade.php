@@ -6,7 +6,7 @@
             </a>
         </div>
     </div>
-    <div class="col-5 text-end">
+    <div class="col-5 text-end me-n2">
         <x-social-links :place="$placeInfo"></x-social-links>
     </div>
 </div>
@@ -32,7 +32,7 @@
             </li>
         </ul>
     </div>
-    <div class="contacts mt-2 row d-lg-block ms-5">
+    <div class="contacts mt-2 row d-none d-lg-block ms-5">
         <div class="contact-item mb-2">
             <a href="tel:{{ $placeInfo['phone'] }}" class="text-decoration-none">
                 <i class="fas fa-phone text-success me-2"></i> {{ $placeInfo['phone'] }}

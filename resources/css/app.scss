@@ -1,22 +1,7 @@
+$enable-negative-margins: true;
 @import "bootstrap";
 @import '@fortawesome/fontawesome-free/css/all.css';
 
 $primary-color: #333;
 $secondary-color: #fff;
 $link-color: #007bff;
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-}
-
-@media (min-width: 992px) {
-  .social-links i:before{
-    font-size: 24px;
-  }
-}
