@@ -24,6 +24,9 @@ class DomainMiddleware
         Config::set('app.template', $template);
         $placeApi = new PlaceApi($request);
         $placeInfo = $placeApi->getPlaceInfo();
+        if(!$placeInfo) {
+            abort(404);
+        }
         view()->share('placeInfo', $placeInfo);
         return $next($request);
     }
