@@ -47,7 +47,7 @@ class PlaceApi
         if($response->status() === 200 && $data) {
             return $data;
         } else {
-            Log::channel('api')->error("Ошибка обращения к place_api", [
+            Log::channel('api')->error("Ошибка обращения к place_api " . $response->status(), [
                 'url' => $url,
                 'path' => $path,
                 'params' => $params,

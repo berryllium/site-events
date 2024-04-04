@@ -16,7 +16,7 @@
     </div>
 </header>
 
-<main class="container">
+<main class="container flex-grow-1">
     <h1 class="mt-4 mb-4 text-center">{{ $title }}</h1>
     <div class="content">
         @yield('content')
