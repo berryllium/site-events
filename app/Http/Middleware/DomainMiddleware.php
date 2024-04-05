@@ -17,16 +17,15 @@ class DomainMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $domain = $request->getHost();
-        $domainTemplates = Config::get('domain_templates');
-        $template = $domainTemplates[$domain] ?? 'default';
-        Config::set('view.paths', [resource_path("views/layouts/$template")]);
-        Config::set('app.template', $template);
         $placeApi = new PlaceApi($request);
         $placeInfo = $placeApi->getPlaceInfo();
         if(!$placeInfo) {
             abort(404);
         }
+
+        $template = $placeInfo['template'] ?? 'default';
+        Config::set('view.paths', [resource_path("views/layouts/$template")]);
+        Config::set('app.template', $template);
         view()->share('placeInfo', $placeInfo);
         return $next($request);
     }

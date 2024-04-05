@@ -1,4 +1,0 @@
-<?php
-return [
-    'localhost' => 'default',
-];

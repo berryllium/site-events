@@ -4,6 +4,8 @@ function init() {
     const map = document.getElementById('map')
     const link = map.dataset.link
     const name = map.dataset.name
+    const preset = map.dataset.preset ? map.dataset.preset : 'islands#default'
+
     let coords = []
 
     var match = link.match(/([-0-9.]+)%2C([-0-9.]+)/);
@@ -23,6 +25,9 @@ function init() {
     var myPlacemark = new ymaps.Placemark(coords, {
         hintContent: name,
         balloonContent: name
+    }, {
+        preset: preset,
+        iconColor: 'red'
     });
 
     myMap.geoObjects.add(myPlacemark);
