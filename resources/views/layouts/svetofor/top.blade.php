@@ -1,4 +1,4 @@
-<div class="top-line d-flex justify-content-center py-4">
+<div class="top-line d-flex justify-content-center">
     <div class="contacts">
         @if($placeInfo['phone'])
             <a href="tel:{{ $placeInfo['phone'] }}" class="text-decoration-none me-3">

@@ -9,14 +9,21 @@ $blue: #172539;
 }
 
 body {
-  background: $background;
+  background-image: url('/public/asset/svetofor/images/bg.png');
   font-size: 16px;
 }
 
 .top-line {
+  background: $background;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  margin-bottom: -50px;
   font-size: 2em;
     a {
       color: $blue;
+      &:hover {
+        color: blue;
+      }
     }
 }
 
@@ -46,6 +53,9 @@ nav {
       color: white;
       letter-spacing: 2px;
       font-size: 2em;
+      &:hover {
+        transform: scale(1.1)
+      }
     }
   }
 }
@@ -84,6 +94,15 @@ nav {
 .card-link a {
   letter-spacing: 2px;
   color: $blue;
+  text-decoration: none;
+  font-size: 1.5em;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.card-text {
+  font-size: 1.2em;
 }
 
 .banner {
@@ -152,15 +171,28 @@ nav {
   height: 500px;
 }
 
-footer .social-links {
-  .fa-whatsapp {
-    color: green
+footer {
+  background: $background;
+  div {
+    font-size: 1.2em;
   }
-  .fa-odnoklassniki {
-    color: orange
+  .social-links {
+    .fa-whatsapp {
+      color: green
+    }
+
+    .fa-odnoklassniki {
+      color: orange
+    }
+
+    .fa-instagram {
+      color: #833ab4
+    }
   }
-  .fa-instagram {
-    color: #833ab4
+  .contact-item {
+    a {
+      color: $blue
+    }
   }
 }
 

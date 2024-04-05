@@ -11,8 +11,8 @@
 </head>
 <body>
 <header>
+    @include('top')
     <div class="container">
-        @include('top')
         @include('navbar')
     </div>
 </header>
@@ -23,11 +23,11 @@
     </div>
 </main>
 
-<footer class="bg-dark text-white px-3">
+<footer class="px-3">
     <div class="container">
         <div class="contacts mb-2 mt-2 row small">
             <div class="col-7 col-lg-3">
-                <div class="text-white mb-1">Контакты:</div>
+                <div class="mb-1">Контакты:</div>
                 <div class="contact-item mb-2">
                     <a href="tel:{{ $placeInfo['phone'] }}" class="text-decoration-none">
                         <i class="fas fa-phone text-success me-2"></i> {{ $placeInfo['phone'] }}
@@ -35,31 +35,31 @@
                 </div>
                 <div class="contact-item mb-2">
                     <a href="mailto:{{ $placeInfo['email'] }}" class="text-decoration-none">
-                        <i class="fas fa-envelope text-white me-2"></i> {{ $placeInfo['email'] }}
+                        <i class="fas fa-envelope text-success me-2"></i> {{ $placeInfo['email'] }}
                     </a>
                 </div>
             </div>
             <div class="col-5 col-lg-3">
-                <div class="text-white mb-1">Мы в соцсетях:</div>
+                <div class="mb-1">Мы в соцсетях:</div>
                 <x-social-links :place="$placeInfo"></x-social-links>
             </div>
             @if($placeInfo['working_hours'])
             <div class="d-none d-lg-block col-lg-3">
-                <div class="text-white mb-1">Время работы:</div>
+                <div class="mb-1">Время работы:</div>
                 <div class="contact-item mb-2">
                     <i class="fas fa-calendar text-warning me-2"></i> {{ $placeInfo['working_hours'] }}
                 </div>
             </div>
             @endif
             <div class="d-none d-lg-block col-lg-3">
-                <div class="text-white mb-1">Адрес:</div>
+                <div class="mb-1">Адрес:</div>
                 <div class="contact-item mb-2 d-flex">
                     <i class="fas fa-location-dot text-danger me-2"></i>
                     <span>{{ $placeInfo['address'] }}</span>
                 </div>
             </div>
         </div>
-        <p class="text-center small">&copy; @php echo date('Y') @endphp Все права защищены.</p>
+        <div class="text-center small pb-3">&copy; @php echo date('Y') @endphp Все права защищены.</div>
     </div>
 </footer>
 </body>

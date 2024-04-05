@@ -5,5 +5,5 @@
     </div>
 </div>
 <div class="card-link text-center mt-2">
-    <a href="{{ route('detail', $id) }}" class="text-uppercase text-decoration-none">Подробнее</a>
+    <a href="{{ route('detail', $id) }}" class="text-uppercase">Подробнее</a>
 </div>
