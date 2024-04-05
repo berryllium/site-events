@@ -1,25 +1,47 @@
 @extends('base')
 @section('content')
-    <div class="row">
-        @if($place)
-            @if($place['image'])
-                <div class="col-6">
-                    <img src="{{ $place['image_src'] }}" alt="{{ $place['name'] }}" class="w-100">
-                </div>
-            @endif
-        <div class="col-6 overflow-hidden">
-            <table class="table table-striped">
-                <tr><th>Название:</th><td> {{ $place['name'] }} </td></tr>
-                <tr><th>Описание:</th><td> {{ $place['description'] }} </td></tr>
-                <tr><th>Адрес:</th><td> {{ $place['address'] }} </td></tr>
-                <tr><th>Описание:</th><td> {{ $place['description'] }} </td></tr>
-                <tr><th>Время работы:</th><td> {{ $place['working_hours'] }} </td></tr>
-                <tr><th>Дополнительная информация:</th><td> {!! $place['additional_info'] !!} </td></tr>
-            </table>
-        </div>
+    <div class="page-title mb-5">
+        <span>О нас</span>
+    </div>
+    <div class="row about">
+        <div class="col-12">
+            @if($place)
+                @if($place['description'])
+                    {{ $place['description'] }}
+                @else
+                    <div class="position-relative">
+                        <div class="text">
+                            <h2 class="mt-5">Основная цель магазинов</h2>
+                            <p>Обеспечение населения товарами<br>по самым низким ценам</p>
 
-        @else
-            <div>Нет связи с сервером</div>
-        @endif
+                            <h2 class="mt-5">Формат сети</h2>
+                            <ul class="p-2">
+                                <li>Формат магазинов - жесткий дискаунтер.</li>
+                                <li>Средняя площадь магазинов - 1000 кв. м.</li>
+                                <li>Принцип работы - самообслуживание</li>
+                                <li>Ассортимент - не более 2000 наименований товаров продовольственной и непродовольственной группы.</li>
+                                <li>Оформление - минимальное аскетическое исполнение торгового зала, броское внешнее оформление.</li>
+                            </ul>
+
+                            <h2 class="mt-5">Конкурентые преимущества</h2>
+                            <ul class="p-2">
+                                <li>цены на 20% ниже среднерыночных, за счет работы напрямую с производителями, жестким контролем над затратами и минимальной торговой надбавке</li>
+                                <li>экономия времени потребителя на поиск и покупку товара</li>
+                                <li>в ассортименте присутствуют товары, при покупке которых, потребителю не нужно переплачивать за бренд</li>
+                                <li>удобное расположение и транспортная доступность магазинов (находятся в черте города на оживленных магистралях)</li>
+                                <li>отсутствие платы за "вход" для производителей товаров.</li>
+                                <li>отсутствие каких-либо дополнительных сборов с производителей товаров, отсутствие ретро-бонусов и подобных выплат.</li>
+                            </ul>
+                        </div>
+                        <div class="about-img position-absolute top-0 end-0">
+                            <img src="{{ asset('/asset/svetofor/images/about.png') }}" alt="">
+                        </div>
+                    </div>
+                    
+                @endif
+            @else
+                <div>Нет связи с сервером</div>
+            @endif
+        </div>
     </div>
 @endsection

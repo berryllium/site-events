@@ -239,3 +239,23 @@ footer {
     background: $blue;
   }
 }
+
+.about {
+  .text {
+    font-size: 1.3em;
+  }
+  li {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  .about-img {
+    width: 600px;
+    height: 220px;
+    overflow: hidden;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    img {
+      width: 100%;
+    }
+  }
+}
