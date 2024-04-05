@@ -3,7 +3,7 @@
     <div class="page-title mb-5">
         <span>О нас</span>
     </div>
-    <div class="row about">
+    <div class="row about mb-5">
         <div class="col-12">
             @if($place)
                 @if($place['description'])
@@ -39,6 +39,14 @@
                     </div>
                     
                 @endif
+                <div class="row appeal align-items-center">
+                    <div class="col-lg-4 col-12 image">
+                        <img class="w-100" src="{{ $placeInfo['appeal_image_src'] }}" alt="">
+                    </div>
+                    <div class="col-lg-8 col-12 p-5 text">
+                        {!! $placeInfo['appeal_text'] !!}
+                    </div>
+                </div>
             @else
                 <div>Нет связи с сервером</div>
             @endif
