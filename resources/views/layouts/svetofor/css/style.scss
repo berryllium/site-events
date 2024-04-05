@@ -117,11 +117,6 @@ nav {
 
 .home-title {
   height: 68px;
-  padding: 10px 60px;
-  font-size: 3em;
-  color: white;
-  border-radius: 50px;
-  background: $blue;
   position: relative;
   &:before,
   &:after {
@@ -192,32 +187,30 @@ footer {
 .social-links {
   &.color {
     .fa-whatsapp {
-      color: green
+      color: green;
+      &:hover {
+        color: darkolivegreen;
+      }
     }
 
     .fa-odnoklassniki {
-      color: orange
+      color: darkorange;
+      &:hover {
+        color: orange;
+      }
     }
 
     .fa-instagram {
-      color: #833ab4
+      color: #833ab4;
+      &:hover {
+        color: violet;
+      }
     }
   }
 }
 
 
 .contact-info {
-  .contact-title {
-    display: flex;
-    justify-content: center;
-    span {
-      padding: 10px 60px;
-      font-size: 3em;
-      color: white;
-      border-radius: 50px;
-      background: $blue;
-    }
-  }
   .content {
     background: $background;
     border-radius: 50px;
@@ -232,5 +225,17 @@ footer {
         }
       }
     }
+  }
+}
+
+.page-title {
+  display: flex;
+  justify-content: center;
+  span {
+    padding: 10px 60px;
+    font-size: 3em;
+    color: white;
+    border-radius: 50px;
+    background: $blue;
   }
 }

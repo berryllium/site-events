@@ -22,7 +22,7 @@
     </div>
 
     <div class="row mb-5">
-        <div class="col text-center d-flex justify-content-center align-items-center">
+        <div class="col text-center d-flex justify-content-center align-items-center page-title">
             <span class="home-title d-flex align-items-center">Свежие новости</span>
         </div>
     </div>
