@@ -3,15 +3,15 @@
     <div class="contact-info row mb-4">
         <div class="contact-title mb-5"><span>Контакты</span></div>
         @if($placeInfo)
-            <div class="row content">
-                <div class="col-12 col-lg-6">
+            <div class="d-flex content mb-5">
+                <div class="w-50 left">
                     @if($placeInfo['address_link'])
-                        <div id="map" data-link="{{ $placeInfo['address_link'] }}" data-name="{{ $placeInfo['name'] }}" class="ms-n4"></div>
+                        <div id="map" data-preset="islands#blueShoppingIcon" data-link="{{ $placeInfo['address_link'] }}" data-name="{{ $placeInfo['name'] }}"></div>
                         <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU" type="text/javascript"></script>
                         <script src="{{ asset('js/map.js') }}"></script>
                     @endif
                 </div>
-                <div class="col-12 col-lg-6 me-n4 d-flex flex-column justify-content-center">
+                <div class="w-50 d-flex flex-column justify-content-center p-3 right">
                     <div class="contact-item mb-3">
                         <i class="fas fa-map-marker-alt text-danger me-2"></i> {{ $placeInfo['address'] }}
                     </div>
@@ -22,7 +22,7 @@
                         <i class="fas fa-envelope text-dark me-2"></i> {{ $placeInfo['email'] }}
                     </a>
                     <div class="contact-item mt-3">
-                        <x-social-links :place="$placeInfo" :zoom="2"></x-social-links>
+                        <x-social-links :place="$placeInfo" :zoom="2" class="color"></x-social-links>
                     </div>
                 </div>
             </div>

@@ -41,7 +41,7 @@
             </div>
             <div class="col-5 col-lg-3">
                 <div class="mb-1">Мы в соцсетях:</div>
-                <x-social-links :place="$placeInfo"></x-social-links>
+                <x-social-links :place="$placeInfo" class="color"></x-social-links>
             </div>
             @if($placeInfo['working_hours'])
             <div class="d-none d-lg-block col-lg-3">
