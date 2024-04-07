@@ -7,7 +7,8 @@ export default defineConfig({
             input: [
                 'resources/css/app.scss',
                 'resources/js/app.js',
-                'resources/views/layouts/default/css/style.scss'
+                'resources/views/layouts/default/css/style.scss',
+                'resources/views/layouts/svetofor/css/style.scss'
             ],
             refresh: true,
         }),

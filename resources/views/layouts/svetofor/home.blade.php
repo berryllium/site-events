@@ -2,7 +2,7 @@
 @section('content')
 
     @if($horizontal_slider)
-    <div class="d-none d-lg-block">
+    <div class="d-none d-lg-block mb-5">
         <x-slider :files="$horizontal_slider"></x-slider>
     </div>
     @endif
@@ -13,15 +13,7 @@
         </div>
     @endif
 
-    <div class="row">
-        <div class="col">
-            <div class="banner">
-                <img src="{{ asset('/asset/svetofor/images/banner.png') }}" alt="">
-            </div>
-        </div>
-    </div>
-
-    <div class="row mb-5">
+    <div class="row mb-5 mt-5">
         <div class="col text-center d-flex justify-content-center align-items-center page-title">
             <span class="home-title d-flex align-items-center">Свежие новости</span>
         </div>
@@ -33,6 +25,14 @@
                 <x-news-card :data="$data"></x-news-card>
             </div>
         @endforeach
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="banner">
+                <img src="{{ asset('/asset/svetofor/images/banner.png') }}" alt="">
+            </div>
+        </div>
     </div>
     
     <div class="row appeal align-items-center">
