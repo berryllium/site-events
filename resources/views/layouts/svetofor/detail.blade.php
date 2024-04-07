@@ -31,7 +31,7 @@
                     </div>
                 @endforeach
             </div>
-            <div class="col-12 col-lg-6 ps-5"><pre>{!! $message['text'] !!}</pre></div>
+            <div class="col-12 col-lg-6 ps-5 text">{!! nl2br(e($message['text'])) !!}</div>
         @endif
     </div>
     @endif
