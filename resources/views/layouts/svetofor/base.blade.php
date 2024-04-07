@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Default site</title>
+    <title>{{ $placeInfo['name'] }}</title>
     <link rel="icon" type="image/x-icon" href="{{ $placeInfo['logo_image_src'] ?? '' }}">
     @vite(['resources/css/app.scss', 'resources/views/layouts/'.config('app.template').'/css/style.scss', 'resources/js/app.js'])
 </head>
@@ -23,7 +23,7 @@
     </div>
 </main>
 
-<footer class="px-3">
+<footer class="p-3">
     <div class="container">
         <div class="contacts mb-2 mt-2 row small">
             <div class="col-7 col-lg-3">
