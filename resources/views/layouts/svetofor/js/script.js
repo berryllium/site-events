@@ -12,7 +12,7 @@ document.getElementById('more').addEventListener('click', function(){
             if(response.data.last_page) {
                 button.remove()
             }
-            document.querySelector('.news-list').innerHTML += (response.data.html)
+            document.querySelector('.news-list').insertAdjacentHTML('beforeend', response.data.html);
             ajax = false
         })
         .catch(function(e){

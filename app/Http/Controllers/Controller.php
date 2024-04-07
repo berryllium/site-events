@@ -63,7 +63,7 @@ class Controller extends BaseController
         if($request->get('ajax')) {
             return [
                 'html' => view('components/news-list', ['paginator' => $paginator])->render(),
-                'last_page' => $paginator->lastPage() == $paginator->currentPage()
+                'last_page' => $paginator->lastPage() == $paginator->currentPage(),
             ];
         }
 
