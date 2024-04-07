@@ -26,7 +26,7 @@ body {
   padding-top: 30px;
   padding-bottom: 60px;
   margin-bottom: -50px;
-  font-size: 2em;
+  font-size: 2rem;
     a {
       color: $blue;
       &:hover {
@@ -38,7 +38,7 @@ body {
 nav {
   color: white;
   .name {
-    font-size: 2em;
+    font-size: 2rem;
   }
   &.navbar {
     background: $blue;
@@ -60,7 +60,7 @@ nav {
     a {
       color: white;
       letter-spacing: 2px;
-      font-size: 2em;
+      font-size: 2rem;
       &:hover {
         transform: scale(1.1)
       }
@@ -76,14 +76,6 @@ nav {
 .carousel-control-next,
 .carousel-control-prev {
   filter: invert(100%);
-}
-
-.carousel-control-next {
-  right: -30px;
-}
-
-.carousel-control-prev {
-  left: -30px;
 }
 
 .card {
@@ -103,14 +95,14 @@ nav {
   letter-spacing: 2px;
   color: $blue;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   &:hover {
     text-decoration: underline;
   }
 }
 
 .card-text {
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 .banner {
@@ -145,7 +137,7 @@ nav {
 
 .appeal {
   .text {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 }
 
@@ -177,7 +169,7 @@ nav {
 footer {
   background: $background;
   div {
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
   .contact-item {
     a {
@@ -219,7 +211,7 @@ footer {
     box-shadow: 0 0 5px 4px rgba(0,0,0,0.27);
     overflow: hidden;
     .right {
-      font-size: 2em;
+      font-size: 2rem;
       a {
         text-decoration: none;
         &.contact-item {
@@ -240,8 +232,8 @@ footer {
   display: flex;
   justify-content: center;
   span {
-    padding: 10px 60px;
-    font-size: 3em;
+    padding: 10px 20px;
+    font-size: 2.5rem;
     color: white;
     border-radius: 50px;
     background: $blue;
@@ -250,10 +242,10 @@ footer {
 
 .about {
   .text {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
   li {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     margin-bottom: 10px;
   }
   .about-img {
@@ -273,7 +265,7 @@ footer {
 
 .more {
   padding: 10px 30px;
-  font-size: 2em;
+  font-size: 2rem;
   color: white;
   border-radius: 50px;
   background: $blue;
@@ -289,21 +281,21 @@ footer {
     justify-content: center;
     & > div {
       padding: 10px 60px;
-      font-size: 3em;
+      font-size: 3rem;
       color: white;
       border-radius: 50px;
       background: $blue;
     }
   }
   .text {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 }
 
 .mob-header {
   background: $blue;
   color: white;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   text-transform: uppercase;
   .mob-nav {
     background: $blue;
@@ -316,18 +308,26 @@ footer {
   }
 }
 
-@media (max-width: 1200px) {
-  body {
-    font-size: 12px;
-  }
-}
-
 @media (max-width: 900px) {
+  body {
+    font-size: 24px;
+  }
   .about .about-img {
     position: static;
     width: 100%;
   }
   .contact-info .content {
     flex-direction: column;
+  }
+  .page-title {
+    span {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  body {
+    font-size: 8px;
   }
 }

@@ -43,7 +43,7 @@
     @if($placeInfo['address_link'])
         <div class="map mt-5 position-relative">
             <div class="how-to-find position-absolute text-center z-1 mt-4"><span>Как нас найти?</span></div>
-            <div class="hint position-absolute z-1 w-25">{{ $placeInfo['address'] }}</div>
+            <div class="hint position-absolute z-1">{{ $placeInfo['address'] }}</div>
             <div id="map" data-preset="islands#blueShoppingIcon" data-link="{{ $placeInfo['address_link'] }}" data-name="{{ $placeInfo['name'] }}" class="mb-5"></div>
         </div>
         <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU" type="text/javascript"></script>
