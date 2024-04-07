@@ -279,3 +279,17 @@ footer {
     background: blue;
   }
 }
+
+.single-post {
+  .new-title {
+    display: flex;
+    justify-content: center;
+    & > div {
+      padding: 10px 60px;
+      font-size: 3em;
+      color: white;
+      border-radius: 50px;
+      background: $blue;
+    }
+  }
+}

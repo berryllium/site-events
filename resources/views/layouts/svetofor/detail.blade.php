@@ -2,8 +2,17 @@
 @section('content')
     @if($message)
     <div class="single-post row">
+        <div class="col-12 mb-5">
+            <div class="new-title">
+                <div class="text-center">
+                    Новинка
+                    @if(isset($message['data']['string'])):
+                    <div class="name small">{{ $message['data']['string'] }}</div>
+                    @endif
+                </div>
+            </div>
+        </div>
         @if($message['files'])
-            <div class="col-12 col-lg-6"><pre>{!! $message['text'] !!}</pre></div>
             <div class="images col-12 col-lg-6">
                 @foreach($message['files'] as $file)
                     <div class="file col-3 pe-1 pb-1 align-self-end">
@@ -22,6 +31,7 @@
                     </div>
                 @endforeach
             </div>
+            <div class="col-12 col-lg-6"><pre>{!! $message['text'] !!}</pre></div>
         @endif
     </div>
     @endif
