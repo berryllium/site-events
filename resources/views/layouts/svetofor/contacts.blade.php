@@ -4,14 +4,14 @@
         <div class="page-title contact-title mb-5"><span>Контакты</span></div>
         @if($placeInfo)
             <div class="d-flex content mb-5">
-                <div class="w-50 left">
+                <div class="left">
                     @if($placeInfo['address_link'])
                         <div id="map" data-preset="islands#blueShoppingIcon" data-link="{{ $placeInfo['address_link'] }}" data-name="{{ $placeInfo['name'] }}"></div>
                         <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU" type="text/javascript"></script>
                         <script src="{{ asset('js/map.js') }}"></script>
                     @endif
                 </div>
-                <div class="w-50 d-flex flex-column justify-content-center p-3 right">
+                <div class="d-flex flex-column justify-content-center p-3 right">
                     <div class="contact-item mb-3">
                         <i class="fas fa-map-marker-alt text-danger me-2"></i> {{ $placeInfo['address'] }}
                     </div>

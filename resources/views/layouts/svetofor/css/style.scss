@@ -227,6 +227,12 @@ footer {
         }
       }
     }
+    .left {
+      flex: 1;
+    }
+    .right {
+      flex: 1;
+    }
   }
 }
 
@@ -314,8 +320,14 @@ footer {
   body {
     font-size: 12px;
   }
+}
+
+@media (max-width: 900px) {
   .about .about-img {
     position: static;
     width: 100%;
+  }
+  .contact-info .content {
+    flex-direction: column;
   }
 }
