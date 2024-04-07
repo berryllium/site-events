@@ -8,5 +8,9 @@
             </div>
         @endforeach
     </div>
-    {{ $paginator->links('pagination::bootstrap-5') }}
+    @if(true)
+        <div class="text-center">
+            <span class="more">Загрузить еще</span>
+        </div>
+    @endif
 @endsection

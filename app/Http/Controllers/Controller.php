@@ -83,4 +83,9 @@ class Controller extends BaseController
             'message' => $message,
         ]);
     }
+
+    public function more(Request $request)
+    {
+
+    }
 }
