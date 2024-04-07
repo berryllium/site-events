@@ -186,12 +186,6 @@ footer {
   }
 }
 
-@media (max-width: 1200px) {
-  body {
-    font-size: 12px;
-  }
-}
-
 .social-links {
   &.color {
     .fa-whatsapp {
@@ -257,6 +251,9 @@ footer {
     margin-bottom: 10px;
   }
   .about-img {
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 600px;
     height: 220px;
     overflow: hidden;
@@ -294,5 +291,31 @@ footer {
   }
   .text {
     font-size: 1.5em;
+  }
+}
+
+.mob-header {
+  background: $blue;
+  color: white;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  .mob-nav {
+    background: $blue;
+    transition-duration: .5s;
+    transition: right 1s;
+    a {
+      min-width: 200px;
+      border-bottom: 1px solid white;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  body {
+    font-size: 12px;
+  }
+  .about .about-img {
+    position: static;
+    width: 100%;
   }
 }

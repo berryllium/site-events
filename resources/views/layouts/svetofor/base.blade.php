@@ -11,9 +11,26 @@
 </head>
 <body class="d-flex flex-column justify-content-between">
 <header>
-    @include('top')
-    <div class="container">
-        @include('navbar')
+    <div class="d-none d-lg-block">
+        @include('top')
+        <div class="container">
+            @include('navbar')
+        </div>
+    </div>
+    <div class="d-lg-none mob-header mb-5">
+        <div class="container py-4 d-flex align-items-center justify-content-between">
+            <img width="100" src="{{ $placeInfo['logo_image_src'] }}" alt="">
+            <span>{{ $placeInfo['name'] }}</span>
+            <div class="menu-button">
+                <img class="cross" style="display: none" width="40" src="{{ asset('/asset/svetofor/images/cross.png') }}" alt="">
+                <img class="burger" style="display: block" width="40" src="{{ asset('/asset/svetofor/images/burger.png') }}" alt="">
+            </div>
+        </div>
+        <div class="position-relative">
+            <div class="mob-nav p-3 pb-5 justify-content-end position-absolute z-1 end-0" style="display: none">
+                @include('nav')
+            </div>
+        </div>
     </div>
 </header>
 

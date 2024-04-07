@@ -10,6 +10,9 @@
                     {{ $place['description'] }}
                 @else
                     <div class="position-relative">
+                        <div class="about-img">
+                            <img src="{{ asset('/asset/svetofor/images/about.png') }}" alt="">
+                        </div>
                         <div class="text">
                             <h2 class="mt-5">Основная цель магазинов</h2>
                             <p>Обеспечение населения товарами<br>по самым низким ценам</p>
@@ -32,9 +35,6 @@
                                 <li>отсутствие платы за "вход" для производителей товаров.</li>
                                 <li>отсутствие каких-либо дополнительных сборов с производителей товаров, отсутствие ретро-бонусов и подобных выплат.</li>
                             </ul>
-                        </div>
-                        <div class="about-img position-absolute top-0 end-0">
-                            <img src="{{ asset('/asset/svetofor/images/about.png') }}" alt="">
                         </div>
                     </div>
                     
