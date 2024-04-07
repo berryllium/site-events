@@ -13,9 +13,9 @@
             </div>
         </div>
         @if($message['files'])
-            <div class="images col-12 col-lg-6">
+            <div class="images col-12 col-lg-6 row">
                 @foreach($message['files'] as $file)
-                    <div class="file col-3 pe-1 pb-1 align-self-end">
+                    <div class="file col-12 pe-1 pb-1 align-self-end">
                         <div class="border p-2">
                             <a href="<?=$file['src']?>" class="d-block mb-3" target="_blank">
                                 @if($file['type'] == 'video')
@@ -31,7 +31,7 @@
                     </div>
                 @endforeach
             </div>
-            <div class="col-12 col-lg-6"><pre>{!! $message['text'] !!}</pre></div>
+            <div class="col-12 col-lg-6 ps-5"><pre>{!! $message['text'] !!}</pre></div>
         @endif
     </div>
     @endif
