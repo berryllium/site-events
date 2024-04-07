@@ -3,7 +3,7 @@ import axios from "axios";
 let page = 0
 let ajax = false
 
-const moreButton = document.getElementById('.more')
+const moreButton = document.getElementById('more')
 const menuButton = document.querySelector('.menu-button')
 
 if(moreButton) {
