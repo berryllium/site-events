@@ -60,6 +60,13 @@ class Controller extends BaseController
         );
         $paginator->setPath('/news');
 
+        if($request->get('ajax')) {
+            return [
+                'html' => view('components/news-list', ['paginator' => $paginator])->render(),
+                'last_page' => $paginator->lastPage() == $paginator->currentPage()
+            ];
+        }
+
         return view('news', [
             'title' => 'Новости',
             'paginator' => $paginator,
@@ -82,10 +89,5 @@ class Controller extends BaseController
             'title' => 'Детальная страница',
             'message' => $message,
         ]);
-    }
-
-    public function more(Request $request)
-    {
-
     }
 }
