@@ -12,6 +12,7 @@
     <title>Default site</title>
     <link rel="icon" type="image/x-icon" href="{{ $placeInfo['logo_image_src'] ?? '' }}">
     @vite(['resources/css/app.scss', 'resources/views/layouts/'.config('app.template').'/css/style.scss', 'resources/js/app.js'])
+    {!! $placeInfo['header_script'] !!}
 </head>
 <body>
 <header class="bg-dark">
