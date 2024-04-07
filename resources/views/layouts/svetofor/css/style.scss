@@ -9,10 +9,16 @@ $blue: #172539;
 }
 
 body {
-  background-image: url('/public/asset/svetofor/images/bg.png');
   font-size: 16px;
+  background-image:
+    radial-gradient(circle at 80% 20%, #E1213080, #E1213080 5%, transparent 81px),
+    radial-gradient(circle at 0 35%, #F4E94D80, #F4E94D80 10%, transparent 51px),
+    radial-gradient(circle at 100% 45%, #63B33580, #63B33580 5%, transparent 51px),
+    radial-gradient(circle at 0 60%, #C7C6C680, #C7C6C680 15%, transparent 51px),
+    radial-gradient(circle at 85% 60%, #C7C6C680, #C7C6C680 5%, transparent 51px),
+    radial-gradient(circle at 60% 70%, #C7C6C680, #C7C6C680 5%, transparent 51px),
+    url('/public/asset/svetofor/images/bg.png')
 }
-
 .top-line {
   background: $background;
   padding-top: 30px;
