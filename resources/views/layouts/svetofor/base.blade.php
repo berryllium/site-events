@@ -28,7 +28,10 @@
         </div>
         <div class="position-relative">
             <div class="mob-nav p-3 pb-5 justify-content-end position-absolute z-1 end-0" style="display: none">
-                @include('nav')
+                <div class="menu-links">
+                    <x-social-links :place="$placeInfo" class="color"></x-social-links>
+                    @include('nav')
+                </div>
             </div>
         </div>
     </div>
