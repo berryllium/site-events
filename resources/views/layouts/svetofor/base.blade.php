@@ -85,6 +85,11 @@
         </div>
         <div class="text-center small pb-3">&copy; @php echo date('Y') @endphp Все права защищены.</div>
     </div>
+    @if($placeInfo['show_chat_icon'])
+        <a class="chat-icon position-fixed bottom-0 end-0 me-5 mb-5" href="{{ $place['link_whatsapp'] }}" target="_blank">
+            <i class="fab fa-whatsapp fa-6x bg-light rounded-circle" style="color: green"></i>
+        </a>
+    @endif
 </footer>
 </body>
 </html>
