@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
@@ -40,20 +41,26 @@ class PlaceApi
 
     private function query($path, $params = null)
     {
-        $url = $this->url . $path;
-        $response = Http::withHeaders($this->headers)->get($url, $params);
-        $data = $response->json();
+        $cache_id = md5(serialize($params) . $path);
+        $data = Cache::remember($cache_id, env('CACHE_TIME', 5), function () use($path, $params) {
+            $url = $this->url . $path;
+            $response = Http::withHeaders($this->headers)->get($url, $params);
+            $data = $response->json();
+            if($response->status() === 200 && $data) {
+                return $data;
+            } else {
+                Log::channel('api')->error("Ошибка обращения к place_api " . $response->status(), [
+                    'url' => $url,
+                    'path' => $path,
+                    'params' => $params,
+                    'message' => $data['message'] ?? ''
+                ]);
+                return false;
+            }
+        });
+
+        return $data;
         
-        if($response->status() === 200 && $data) {
-            return $data;
-        } else {
-            Log::channel('api')->error("Ошибка обращения к place_api " . $response->status(), [
-                'url' => $url,
-                'path' => $path,
-                'params' => $params,
-                'message' => $data['message'] ?? ''
-            ]);
-            return false;
-        }
+
     }
 }
