@@ -14,21 +14,16 @@
     @endif
 
     <div class="row mb-5 mt-5">
-        <div class="col text-center d-flex justify-content-center align-items-center page-title">
-            <span class="home-title d-flex align-items-center">Свежие новости</span>
+        <div class="col page-title d-flex align-items-center">
+            <span class="home-title pe-5">Свежие новости</span>
+            <i class="tail ms-2"></i>
+            <i class="tail tail-2 ms-2"></i>
+            <i class="tail tail-3 ms-2"></i>
         </div>
     </div>
 
     <div class="row">
         <x-news-list :paginator="$posts"></x-news-list>
-    </div>
-
-    <div class="row">
-        <div class="col">
-            <div class="banner">
-                <img src="{{ asset('/asset/svetofor/images/banner.png') }}" alt="">
-            </div>
-        </div>
     </div>
     
     <div class="row appeal align-items-center">

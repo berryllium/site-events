@@ -1,55 +1,24 @@
 @extends('base')
 @section('content')
-    <div class="page-title mb-5">
-        <span>О нас</span>
+    <div class="row mb-5 mt-5">
+        <div class="col page-title d-flex align-items-center justify-content-center">
+            <i class="tail tail-3 me-2"></i>
+            <i class="tail tail-2 me-2"></i>
+            <i class="tail me-2"></i>
+            <span class="about-title">О нас</span>
+        </div>
     </div>
-    <div class="row about mb-5">
-        <div class="col-12">
-            @if($place)
-                @if($place['description'])
-                    {{ $place['description'] }}
-                @else
-                    <div class="position-relative">
-                        <div class="about-img">
-                            <img src="{{ asset('/asset/svetofor/images/about.png') }}" alt="">
-                        </div>
-                        <div class="text">
-                            <h2 class="mt-5">Основная цель магазинов</h2>
-                            <p>Обеспечение населения товарами<br>по самым низким ценам</p>
-
-                            <h2 class="mt-5">Формат сети</h2>
-                            <ul class="p-2">
-                                <li>Формат магазинов - жесткий дискаунтер.</li>
-                                <li>Средняя площадь магазинов - 1000 кв. м.</li>
-                                <li>Принцип работы - самообслуживание</li>
-                                <li>Ассортимент - не более 2000 наименований товаров продовольственной и непродовольственной группы.</li>
-                                <li>Оформление - минимальное аскетическое исполнение торгового зала, броское внешнее оформление.</li>
-                            </ul>
-
-                            <h2 class="mt-5">Конкурентые преимущества</h2>
-                            <ul class="p-2">
-                                <li>цены на 20% ниже среднерыночных, за счет работы напрямую с производителями, жестким контролем над затратами и минимальной торговой надбавке</li>
-                                <li>экономия времени потребителя на поиск и покупку товара</li>
-                                <li>в ассортименте присутствуют товары, при покупке которых, потребителю не нужно переплачивать за бренд</li>
-                                <li>удобное расположение и транспортная доступность магазинов (находятся в черте города на оживленных магистралях)</li>
-                                <li>отсутствие платы за "вход" для производителей товаров.</li>
-                                <li>отсутствие каких-либо дополнительных сборов с производителей товаров, отсутствие ретро-бонусов и подобных выплат.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                @endif
-                <div class="row appeal align-items-center">
-                    <div class="col-lg-4 col-12 image">
-                        <img class="w-100" src="{{ $placeInfo['appeal_image_src'] }}" alt="">
-                    </div>
-                    <div class="col-lg-8 col-12 pt-4 p-lg-5 text">
-                        {!! $placeInfo['appeal_text'] !!}
-                    </div>
-                </div>
-            @else
-                <div>Нет связи с сервером</div>
-            @endif
+    <div class="row about-block align-items-center">
+        <div class="col-lg-7 col-12">
+            <div class="title"> {{ $placeInfo['name'] }}</div>
+            <div class="text">
+                {{ $placeInfo['description'] }}
+            </div>
+        </div>
+        <div class="col-lg-5 col-12">
+            <div class="image text-end">
+                <img src="{{ @asset('/asset/development_center/images/girl.png') }}" alt="">
+            </div>
         </div>
     </div>
 @endsection

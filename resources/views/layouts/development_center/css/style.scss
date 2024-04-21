@@ -108,23 +108,51 @@ nav {
   }
 }
 
+.tail {
+  height: 100%;
+  background: $main;
+  display: inline-block;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  &-2 {
+    height: 70%;
+    opacity: .5;
+  }
+  &-3 {
+    height: 50%;
+    opacity: .3;
+  }
+}
+
 .home-title {
   height: 68px;
   position: relative;
-  &:before,
-  &:after {
-    content: '';
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: $main;
-    position: absolute;
-  }
   &:before {
     left: -70px;
   }
   &:after {
     right: -70px;
+  }
+}
+
+.about-block {
+  .image {
+    background-image: url("/public/asset/development_center/images/oval.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    img {
+      width: 100%;
+    }
+  }
+  .title {
+    border-left: 5px solid $main;
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+  .text {
+    margin-top: 20px;
+    font-size: 1.5rem;
   }
 }
 
@@ -222,37 +250,14 @@ footer {
 }
 
 .page-title {
-  display: flex;
-  justify-content: center;
   span {
-    padding: 10px 20px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
     font-size: 2.5rem;
     color: white;
     border-radius: 50px;
     background: $main;
-  }
-}
-
-.about {
-  .text {
-    font-size: 1.5rem;
-  }
-  li {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  .about-img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 600px;
-    height: 220px;
-    overflow: hidden;
-    border-bottom-left-radius: 50px;
-    border-top-left-radius: 50px;
-    img {
-      width: 100%;
-    }
   }
 }
 
@@ -304,10 +309,6 @@ footer {
 @media (max-width: 900px) {
   body {
     font-size: 24px;
-  }
-  .about .about-img {
-    position: static;
-    width: 100%;
   }
   .contact-info .content {
     flex-direction: column;
