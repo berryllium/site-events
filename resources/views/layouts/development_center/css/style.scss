@@ -1,7 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/myriad-pro');
 
 $background: #F8F7F7;
-$blue: #172539;
+$main: #E07326;
 
 * {
   font-family: 'Myriad Pro', sans-serif;
@@ -11,56 +11,49 @@ $blue: #172539;
 body {
   min-height: 100vh;
   font-size: 16px;
-  background-image:
-    radial-gradient(circle at 80% 20%, #E1213080, #E1213080 5%, transparent 51px),
-    radial-gradient(circle at 0 35%, #F4E94D80, #F4E94D80 10%, transparent 51px),
-    radial-gradient(circle at 100% 45%, #63B33580, #63B33580 5%, transparent 51px),
-    radial-gradient(circle at 5% 65%, #C7C6C680, #C7C6C680 10%, transparent 51px),
-    radial-gradient(circle at 85% 60%, #C7C6C680, #C7C6C680 5%, transparent 51px),
-    radial-gradient(circle at 60% 70%, #C7C6C680, #C7C6C680 5%, transparent 51px),
-    url('/public/asset/svetofor/images/bg.png')
 }
 
 .top-line {
-  background: $background;
-  padding-top: 30px;
-  padding-bottom: 60px;
-  margin-bottom: -50px;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  .wrap {
+    padding: 10px;
+    background: $main;
+    border-radius: 0 0 35px 35px;
     a {
-      color: $blue;
+      color: white;
       &:hover {
-        color: blue;
+        color: lightgray;
       }
     }
+    .separator {
+      color: white;
+    }
+  }
 }
 
 nav {
-  color: white;
-  .name {
-    font-size: 2rem;
-  }
   &.navbar {
-    background: $blue;
     height: 100px;
     box-sizing: border-box;
     display: flex;
-    border-radius: 50px;
     padding: 0 30px;
   }
 
   #navbarNav {
-    height: 60px;
-    border-radius: 30px;
-    border: 2px solid white;
     box-sizing: border-box;
-    .name {
-      letter-spacing: 3px;
-    }
+    padding-left: 60px;
+    background:
+      radial-gradient(circle at 20px 20px, $main, $main 8px, transparent 8px),
+      radial-gradient(circle at 30px 45px, $main, $main 13px, transparent 13px);
+
     a {
-      color: white;
+      color: $main;
       letter-spacing: 2px;
       font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-right: 10px;
       &:hover {
         transform: scale(1.1)
       }
@@ -84,7 +77,7 @@ nav {
     object-fit: contain;
   }
   .card-body {
-    background: $blue;
+    background: $main;
     color: white;
   }
   border-radius: 15px;
@@ -93,7 +86,7 @@ nav {
 
 .card-link a {
   letter-spacing: 2px;
-  color: $blue;
+  color: $main;
   text-decoration: none;
   font-size: 1.5rem;
   &:hover {
@@ -124,7 +117,7 @@ nav {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: $blue;
+    background: $main;
     position: absolute;
   }
   &:before {
@@ -143,7 +136,7 @@ nav {
 
 .map {
   .hint {
-    background: $blue;
+    background: $main;
     color: white;
     padding: 30px 10px;
     border-bottom-right-radius: 20px;
@@ -153,7 +146,7 @@ nav {
   .how-to-find {
     width: 100%;
     span {
-      background: $blue;
+      background: $main;
       color: white;
       padding: 10px 25px;
       border-radius: 50px;
@@ -173,7 +166,7 @@ footer {
   }
   .contact-item {
     a {
-      color: $blue
+      color: $main
     }
   }
 }
@@ -215,7 +208,7 @@ footer {
       a {
         text-decoration: none;
         &.contact-item {
-          color: $blue;
+          color: $main;
         }
       }
     }
@@ -236,7 +229,7 @@ footer {
     font-size: 2.5rem;
     color: white;
     border-radius: 50px;
-    background: $blue;
+    background: $main;
   }
 }
 
@@ -268,7 +261,7 @@ footer {
   font-size: 2rem;
   color: white;
   border-radius: 50px;
-  background: $blue;
+  background: $main;
   cursor: pointer;
   &:hover {
     background: blue;
@@ -284,7 +277,7 @@ footer {
       font-size: 3rem;
       color: white;
       border-radius: 50px;
-      background: $blue;
+      background: $main;
     }
   }
   .text {
@@ -293,12 +286,12 @@ footer {
 }
 
 .mob-header {
-  background: $blue;
+  background: $main;
   color: white;
   font-size: 1.5rem;
   text-transform: uppercase;
   .mob-nav {
-    background: $blue;
+    background: $main;
     transition-duration: .5s;
     transition: right 1s;
     ul a {
