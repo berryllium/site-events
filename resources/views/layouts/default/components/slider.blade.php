@@ -1,4 +1,4 @@
-<div id="{{ $id }}" class="carousel slide">
+<div id="{{ $id }}" class="carousel slide" data-bs-interval="100" data-bs-ride="true">
     <div class="carousel-inner">
         @foreach($files as $k => $file)
             @if($file['src'])
