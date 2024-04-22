@@ -39,10 +39,16 @@ class PlaceApi
         return $response ?? [];
     }
 
+    public function getServices()
+    {
+        $response = $this->query('services');
+        return $response['services'] ?? [];
+    }
+
     private function query($path, $params = null)
     {
         $cache_id = md5(serialize($params) . $path);
-        $data = Cache::remember($cache_id, env('CACHE_TIME', 5), function () use($path, $params) {
+        $data = Cache::remember($cache_id, env('CACHE_TIME', 1), function () use($path, $params) {
             $url = $this->url . $path;
             $response = Http::withHeaders($this->headers)->get($url, $params);
             $data = $response->json();

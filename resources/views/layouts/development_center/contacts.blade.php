@@ -1,7 +1,14 @@
 @extends('base')
 @section('content')
     <div class="contact-info row mb-4">
-        <div class="page-title contact-title mb-5"><span>Контакты</span></div>
+        <div class="row mb-5 mt-5">
+            <div class="col page-title d-flex align-items-center justify-content-center">
+                <span class="about-title me-2">Контакты</span>
+                <i class="tail me-2"></i>
+                <i class="tail tail-2 me-2"></i>
+                <i class="tail tail-3 me-2"></i>
+            </div>
+        </div>
         @if($placeInfo)
             <div class="d-flex content mb-5">
                 <div class="left">

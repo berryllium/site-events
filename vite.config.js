@@ -6,11 +6,12 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/views/layouts/svetofor/js/script.js',
+                'resources/views/layouts/development_center/js/script.js',
                 'resources/css/app.scss',
                 'resources/js/app.js',
                 'resources/views/layouts/default/css/style.scss',
                 'resources/views/layouts/svetofor/css/style.scss',
-
+                'resources/views/layouts/development_center/css/style.scss',
             ],
             refresh: true,
         }),

@@ -90,4 +90,9 @@ class Controller extends BaseController
             'message' => $message,
         ]);
     }
+
+    public function services(PlaceApi $api)
+    {
+        return view('services', ['services' => $api->getServices()]);
+    }
 }

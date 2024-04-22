@@ -6,6 +6,9 @@
         <a class="nav-link {{request()->segment(1) == 'about' ? 'active' : '' }}" href="{{ route('about') }}">О нас</a>
     </li>
     <li class="nav-item">
+        <a class="nav-link {{request()->segment(1) == 'services' ? 'active' : '' }}" href="{{ route('services') }}">{{ $placeInfo['service_title'] }}</a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link {{request()->segment(1) == 'news' ? 'active' : '' }}" href="{{ route('news') }}">Новости</a>
     </li>
     <li class="nav-item">
