@@ -9,7 +9,7 @@
         <meta name="description" content="{{ $placeInfo['seo_description'] }}">
     @endif
     <title>{{ $placeInfo['seo_title'] ?? $placeInfo['name'] }}</title>
-    <link rel="icon" type="image/x-icon" href="{{ $placeInfo['logo_image_src'] ?? '' }}">
+    <link rel="icon" type="image/x-icon" href="{{ $placeInfo['logo_image'] ? $placeInfo['logo_image_src'] : '' }}">
     @vite(['resources/css/app.scss', 'resources/views/layouts/'.config('app.template').'/css/style.scss',  'resources/js/app.js', 'resources/views/layouts/'.config('app.template').'/js/script.js'])
     {!! $placeInfo['header_script'] !!}
 </head>
