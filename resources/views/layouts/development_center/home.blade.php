@@ -27,7 +27,7 @@
     </div>
     
     <div class="row appeal align-items-start">
-        <div class="col-lg-4 col-12 image mt-3">
+        <div class="col-lg-4 col-12 image mb-3">
             <img class="w-100" src="{{ $placeInfo['appeal_image_src'] }}" alt="">
         </div>
         <div class="col-lg-8 col-12 text">
