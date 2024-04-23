@@ -2,10 +2,10 @@
 @section('content')
     <div class="row mb-5 mt-5">
         <div class="col page-title d-flex align-items-center justify-content-center">
-            <i class="tail tail-3 me-2"></i>
-            <i class="tail tail-2 me-2"></i>
-            <i class="tail me-2"></i>
-            <span class="about-title">{{ $placeInfo['service_title'] }}</span>
+            <span class="about-title me-2">{{ $placeInfo['service_title'] }}</span>
+            <i class="tail ms-2"></i>
+            <i class="tail tail-2 ms-2"></i>
+            <i class="tail tail-3 ms-2"></i>
         </div>
     </div>
     @foreach($services as $service)

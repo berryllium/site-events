@@ -15,7 +15,7 @@
 
     <div class="row mb-5 mt-5">
         <div class="col page-title d-flex align-items-center">
-            <span class="home-title pe-5">Свежие новости</span>
+            <span class="home-title me-2">Свежие новости</span>
             <i class="tail ms-2"></i>
             <i class="tail tail-2 ms-2"></i>
             <i class="tail tail-3 ms-2"></i>
