@@ -12,7 +12,7 @@
         <div class="col-lg-7 col-12">
             <div class="title"> {{ $placeInfo['name'] }}</div>
             <div class="text">
-                {{ $placeInfo['description'] }}
+                {!! $placeInfo['description'] !!}
             </div>
         </div>
         <div class="col-lg-5 col-12">
