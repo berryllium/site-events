@@ -30,7 +30,7 @@
         <div class="col-lg-4 col-12 image">
             <img class="w-100" src="{{ $placeInfo['appeal_image_src'] }}" alt="">
         </div>
-        <div class="col-lg-8 col-12 p-5 text">
+        <div class="col-lg-8 col-12 text">
             {!! $placeInfo['appeal_text'] !!}
         </div>
     </div>
