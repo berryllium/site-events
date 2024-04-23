@@ -26,7 +26,7 @@
         <x-news-list :paginator="$posts"></x-news-list>
     </div>
     
-    <div class="row appeal align-items-center">
+    <div class="row appeal align-items-start">
         <div class="col-lg-4 col-12 image">
             <img class="w-100" src="{{ $placeInfo['appeal_image_src'] }}" alt="">
         </div>
